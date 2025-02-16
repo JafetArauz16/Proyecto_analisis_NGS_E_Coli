@@ -1,0 +1,2 @@
+# Proyecto_analisis_NGS_E.coli
+Tarea_analisis_de_alto_rendimiento
