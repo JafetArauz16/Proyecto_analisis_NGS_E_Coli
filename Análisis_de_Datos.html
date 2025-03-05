@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:4364/ -->
+<html class="" style="height: auto;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">jquery[3.6.0];shiny-css[1.10.0];shiny-busy-indicators[1.10.0];shiny-javascript[1.10.0];font-awesome[6.5.2];htmltools-fill[0.5.8.1];htmlwidgets[1.6.4];datatables-css[0.0.0];datatables-binding[0.33];crosstalk[1.2.1];bootstrap[3.4.1];AdminLTE[2.0.6];shinydashboard[0.7.2]</script>
+<script src="./Análisis de Datos_files/jquery.min.js.descarga"></script>
+<link href="./Análisis de Datos_files/shiny.min.css" rel="stylesheet">
+<link href="./Análisis de Datos_files/busy-indicators.css" rel="stylesheet">
+<script src="./Análisis de Datos_files/shiny.min.js.descarga"></script>
+<link href="./Análisis de Datos_files/all.min.css" rel="stylesheet">
+<link href="./Análisis de Datos_files/v4-shims.min.css" rel="stylesheet">
+<link href="./Análisis de Datos_files/fill.css" rel="stylesheet">
+<script src="./Análisis de Datos_files/htmlwidgets.js.descarga"></script>
+<link href="./Análisis de Datos_files/datatables-crosstalk.css" rel="stylesheet">
+<script src="./Análisis de Datos_files/datatables.js.descarga"></script>
+<link href="./Análisis de Datos_files/crosstalk.min.css" rel="stylesheet">
+<script src="./Análisis de Datos_files/crosstalk.min.js.descarga"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./Análisis de Datos_files/bootstrap.min.css" rel="stylesheet">
+<link href="./Análisis de Datos_files/bootstrap-accessibility.min.css" rel="stylesheet">
+<script src="./Análisis de Datos_files/bootstrap.min.js.descarga"></script>
+<script src="./Análisis de Datos_files/bootstrap-accessibility.min.js.descarga"></script>
+<link href="./Análisis de Datos_files/AdminLTE.min.css" rel="stylesheet">
+<link href="./Análisis de Datos_files/_all-skins.min.css" rel="stylesheet">
+<script src="./Análisis de Datos_files/app.min.js.descarga"></script>
+<link href="./Análisis de Datos_files/shinydashboard.css" rel="stylesheet">
+<script src="./Análisis de Datos_files/shinydashboard.min.js.descarga"></script>  <title>Análisis de Datos</title>
+<link href="./Análisis de Datos_files/jquery.dataTables.min.css" rel="stylesheet" type="text/css"><link href="./Análisis de Datos_files/jquery.dataTables.extra.css" rel="stylesheet" type="text/css"><script src="./Análisis de Datos_files/jquery.dataTables.min.js.descarga"></script></head>
+<body class="skin-blue" style="min-height: 611px; height: auto;">
+  <div class="wrapper" style="height: auto;">
+    <header class="main-header">
+      <span class="logo">Análisis de Datos</span>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <span style="display:none;">
+          <i class="fas fa-bars" role="presentation" aria-label="bars icon"></i>
+        </span>
+        <a href="http://127.0.0.1:4364/#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav"></ul>
+        </div>
+      </nav>
+    </header>
+    <aside id="sidebarCollapsed" class="main-sidebar shiny-bound-input" data-collapsed="false">
+      <section id="sidebarItemExpanded" class="sidebar shiny-bound-input">
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a href="http://127.0.0.1:4364/#shiny-tab-resumen" data-toggle="tab" data-value="resumen" aria-expanded="true" tabindex="0" aria-selected="true">
+              <i class="fas fa-table" role="presentation" aria-label="table icon"></i>
+              <span>Resumen de Datos</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:4364/#shiny-tab-normalidad" data-toggle="tab" data-value="normalidad">
+              <i class="fas fa-chart-line" role="presentation" aria-label="chart-line icon"></i>
+              <span>Evaluación de Normalidad</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:4364/#shiny-tab-normalidad_log" data-toggle="tab" data-value="normalidad_log">
+              <i class="far fa-chart-bar" role="presentation" aria-label="chart-bar icon"></i>
+              <span>Normalidad con Log</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:4364/#shiny-tab-outliers" data-toggle="tab" data-value="outliers">
+              <i class="fas fa-triangle-exclamation" role="presentation" aria-label="triangle-exclamation icon"></i>
+              <span>Detección de Outliers</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:4364/#shiny-tab-escalado" data-toggle="tab" data-value="escalado">
+              <i class="fas fa-sliders" role="presentation" aria-label="sliders icon"></i>
+              <span>Datos Escalados</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:4364/#shiny-tab-onehot" data-toggle="tab" data-value="onehot">
+              <i class="fas fa-table-cells" role="presentation" aria-label="table-cells icon"></i>
+              <span>One-Hot Encoding</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://127.0.0.1:4364/#shiny-tab-regresion" data-toggle="tab" data-value="regresion">
+              <i class="fas fa-chart-line" role="presentation" aria-label="chart-line icon"></i>
+              <span>Regresión Logística</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </aside>
+    <div class="content-wrapper" style="min-height: 544px;">
+      <section class="content">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="shiny-tab-resumen" aria-hidden="false" tabindex="0">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-primary">
+                  <div class="box-header">
+                    <h3 class="box-title">Resumen de Datos</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="datatables html-widget html-widget-output shiny-report-size html-fill-item shiny-bound-output" id="summaryTable" style="width:100%;height:auto;" aria-live="polite"><div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="DataTables_Table_0"></label></div><div id="DataTables_Table_0_processing" class="dataTables_processing" role="status" style="display: none;"><div><div></div><div></div><div></div><div></div></div></div><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 864px; padding-right: 0px;"><table class="display dataTable no-footer" style="margin-left: 0px; width: 864px;"><thead>
+    <tr><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 51px;" aria-label="Variable: activate to sort column ascending">Variable</th><th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 23px;" aria-label="Min: activate to sort column ascending">Min</th><th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 23px;" aria-label="Q1: activate to sort column ascending">Q1</th><th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 46px;" aria-label="Median: activate to sort column ascending">Median</th><th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 34px;" aria-label="Mean: activate to sort column ascending">Mean</th><th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 23px;" aria-label="Q3: activate to sort column ascending">Q3</th><th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 26px;" aria-label="Max: activate to sort column ascending">Max</th><th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 24px;" aria-label="NAs: activate to sort column ascending">NAs</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 33px;" aria-label="Type: activate to sort column ascending">Type</th><th class="dt-right sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 92px;" aria-label="Unique_Values: activate to sort column ascending">Unique_Values</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 93px;" aria-label="Most_Common: activate to sort column ascending">Most_Common</th></tr>
+  </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; width: 100%;"><table class="display dataTable no-footer" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 864px;"><thead>
+    <tr style="height: 0px;"><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 51px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Variable: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Variable</div></th><th class="dt-right sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Min: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Min</div></th><th class="dt-right sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Q1: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Q1</div></th><th class="dt-right sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 46px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Median: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Median</div></th><th class="dt-right sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 34px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Mean: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Mean</div></th><th class="dt-right sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 23px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Q3: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Q3</div></th><th class="dt-right sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 26px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Max: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Max</div></th><th class="dt-right sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 24px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="NAs: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">NAs</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 33px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Type: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Type</div></th><th class="dt-right sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 92px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Unique_Values: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Unique_Values</div></th><th class="sorting" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 93px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Most_Common: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Most_Common</div></th></tr>
+  </thead>
+  <tbody><tr class="odd"><td>CD19</td><td class="  dt-right">0.25</td><td class="  dt-right">264.52</td><td class="  dt-right">514.88</td><td class="  dt-right">503.86</td><td class="  dt-right">736.62</td><td class="  dt-right">998.98</td><td class="  dt-right">1</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="even"><td>CD8A</td><td class="  dt-right">0.04</td><td class="  dt-right">274.1</td><td class="  dt-right">525.81</td><td class="  dt-right">512.76</td><td class="  dt-right">758.12</td><td class="  dt-right">999.18</td><td class="  dt-right">1</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="odd"><td>PDCD1</td><td class="  dt-right">0.84</td><td class="  dt-right">257.96</td><td class="  dt-right">503.34</td><td class="  dt-right">509.08</td><td class="  dt-right">758.12</td><td class="  dt-right">998.74</td><td class="  dt-right">1</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="even"><td>CTLA4</td><td class="  dt-right">0.05</td><td class="  dt-right">230.81</td><td class="  dt-right">477.1</td><td class="  dt-right">481.94</td><td class="  dt-right">742.22</td><td class="  dt-right">998.72</td><td class="  dt-right">0</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="odd"><td>FOXP3</td><td class="  dt-right">1.09</td><td class="  dt-right">241.89</td><td class="  dt-right">492.55</td><td class="  dt-right">494.46</td><td class="  dt-right">757.97</td><td class="  dt-right">998.23</td><td class="  dt-right">0</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="even"><td>CD274</td><td class="  dt-right">0.06</td><td class="  dt-right">260.62</td><td class="  dt-right">491.06</td><td class="  dt-right">500.77</td><td class="  dt-right">743.76</td><td class="  dt-right">999.76</td><td class="  dt-right">0</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="odd"><td>TGFB1</td><td class="  dt-right">0.34</td><td class="  dt-right">269.48</td><td class="  dt-right">491</td><td class="  dt-right">499.46</td><td class="  dt-right">742.16</td><td class="  dt-right">999.1</td><td class="  dt-right">0</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="even"><td>IFNG</td><td class="  dt-right">1.1</td><td class="  dt-right">243.15</td><td class="  dt-right">499.84</td><td class="  dt-right">496.58</td><td class="  dt-right">752.05</td><td class="  dt-right">999.66</td><td class="  dt-right">0</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="odd"><td>IL2</td><td class="  dt-right">0.46</td><td class="  dt-right">259.09</td><td class="  dt-right">504.01</td><td class="  dt-right">498.12</td><td class="  dt-right">746.26</td><td class="  dt-right">999.99</td><td class="  dt-right">0</td><td>numeric</td><td class="  dt-right"></td><td></td></tr><tr class="even"><td>CD4</td><td class="  dt-right">1.01</td><td class="  dt-right">229.81</td><td class="  dt-right">482.21</td><td class="  dt-right">491.43</td><td class="  dt-right">742.43</td><td class="  dt-right">999.41</td><td class="  dt-right">0</td><td>numeric</td><td class="  dt-right"></td><td></td></tr></tbody>
+</table></div></div><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 38 entries</div><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" aria-disabled="true" role="link" data-dt-idx="previous" tabindex="-1" id="DataTables_Table_0_previous">Previous</a><span><a class="paginate_button current" aria-controls="DataTables_Table_0" role="link" aria-current="page" data-dt-idx="0" tabindex="0">1</a><a class="paginate_button " aria-controls="DataTables_Table_0" role="link" data-dt-idx="1" tabindex="0">2</a><a class="paginate_button " aria-controls="DataTables_Table_0" role="link" data-dt-idx="2" tabindex="0">3</a><a class="paginate_button " aria-controls="DataTables_Table_0" role="link" data-dt-idx="3" tabindex="0">4</a></span><a class="paginate_button next" aria-controls="DataTables_Table_0" role="link" data-dt-idx="next" tabindex="0" id="DataTables_Table_0_next">Next</a></div></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-normalidad">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-info">
+                  <div class="box-header">
+                    <h3 class="box-title">Evaluación de Normalidad</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="datatables html-widget html-widget-output shiny-report-size html-fill-item shiny-bound-output recalculating" id="normalityTable" style="width:100%;height:auto;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-normalidad_log">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-warning">
+                  <div class="box-header">
+                    <h3 class="box-title">Evaluación de Normalidad con Log</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="datatables html-widget html-widget-output shiny-report-size html-fill-item shiny-bound-output recalculating" id="normalityLogTable" style="width:100%;height:auto;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-outliers">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="box box-solid box-danger">
+                  <div class="box-header">
+                    <h3 class="box-title">Detección de Outliers</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="datatables html-widget html-widget-output shiny-report-size html-fill-item shiny-bound-output recalculating" id="outliersTable" style="width:100%;height:auto;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="box box-solid box-danger">
+                  <div class="box-header">
+                    <h3 class="box-title">Distribución de Outliers</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="shiny-plot-output html-fill-item shiny-bound-output recalculating" id="outliersPlot" style="width:100%;height:400px;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-escalado">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-success">
+                  <div class="box-header">
+                    <h3 class="box-title">Comparación de Valores Originales y Escalados</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="datatables html-widget html-widget-output shiny-report-size html-fill-item shiny-bound-output recalculating" id="scaledTable" style="width:100%;height:auto;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-onehot">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-success">
+                  <div class="box-header">
+                    <h3 class="box-title">One-Hot Encoding: Variables Transformadas</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="datatables html-widget html-widget-output shiny-report-size html-fill-item shiny-bound-output recalculating" id="oneHotTable" style="width:100%;height:auto;" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="shiny-tab-regresion">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="box box-solid box-primary">
+                  <div class="box-header">
+                    <h3 class="box-title">Regresión Logística</h3>
+                  </div>
+                  <div class="box-body">
+                    <div class="tabbable">
+                      <ul class="nav nav-tabs" data-tabsetid="6766" role="tablist">
+                        <li class="active" role="presentation">
+                          <a href="http://127.0.0.1:4364/#tab-6766-1" data-toggle="tab" data-bs-toggle="tab" data-value="Tabla de Resultados" role="tab" id="ui-tab-631" tabindex="0" aria-selected="true" aria-controls="tab-6766-1">Tabla de Resultados</a>
+                        </li>
+                        <li role="presentation">
+                          <a href="http://127.0.0.1:4364/#tab-6766-2" data-toggle="tab" data-bs-toggle="tab" data-value="Gráfico de Coeficientes" role="tab" id="ui-tab-867" tabindex="-1" aria-selected="false" aria-controls="tab-6766-2">Gráfico de Coeficientes</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" data-tabsetid="6766">
+                        <div class="tab-pane active" data-value="Tabla de Resultados" id="tab-6766-1" role="tabpanel" tabindex="0" aria-hidden="false" aria-labelledby="ui-tab-631">
+                          <div class="datatables html-widget html-widget-output shiny-report-size html-fill-item shiny-bound-output recalculating" id="regressionTable" style="width:100%;height:auto;" aria-live="polite"></div>
+                        </div>
+                        <div class="tab-pane" data-value="Gráfico de Coeficientes" id="tab-6766-2" role="tabpanel" tabindex="-1" aria-hidden="true" aria-labelledby="ui-tab-867">
+                          <div class="shiny-plot-output html-fill-item shiny-bound-output recalculating" id="regressionPlot" style="width:100%;height:600px;" aria-live="polite"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+
+</body></html>
